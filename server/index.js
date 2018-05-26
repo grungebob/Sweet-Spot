@@ -62,11 +62,20 @@ app.get('/artist', function(req, res){
         //console.log('TopTracks', topTracks);
         //console.log('First track Urls', topTracks.tracks[0].external_urls.spotify)
         for (track of topTracks.tracks) {
-          //console.log('track', track);
+          console.log('track', track);
+          console.log('track images', track.album.images[1].url)
           infoTracks[track.name] = {
             artist: track.artists[0].name,
             trackId: track.id,
-          } 
+            spotifyLink: track.external_urls.spotify,
+            image: track.album.images[0].url
+            //NOT always available: preview: preview_url
+          }
+          // if (track.preview_url){
+          //   infoTracks[track.name] = {
+          //     preview: track.preview_url
+          //   }
+          //} 
           //console.log('infotracks', infoTracks);
           }
         })
@@ -74,7 +83,7 @@ app.get('/artist', function(req, res){
           //addMusicInfo(infoTracks);
 
 
-          console.log('infoTracks before getting music info', infoTracks);
+          //console.log('infoTracks before getting music info', infoTracks);
            for (track in infoTracks) {
             var infoUrl = 'https://api.spotify.com/v1/audio-features/' + infoTracks[track].trackId;
             // console.log('infoUrl', infoUrl)
@@ -87,25 +96,23 @@ app.get('/artist', function(req, res){
                 //console.log('current track:', track, 'dance rating', trackInfo.danceability); 
                 infoTracks[track].tempo= Math.round(trackInfo.tempo).toString() + 'BPM';
                 infoTracks[track].intensity= Math.round(trackInfo.energy * 100).toString() + '%';
-                infoTracks[track].wordiness= Math.round(trackInfo.speechiness * 150).toString() + '%';
+                infoTracks[track].wordiness= Math.floor(Math.round(trackInfo.speechiness * 200), 100).toString() + '%';
                 infoTracks[track].danciness= Math.round(trackInfo.danceability * 100).toString() + '%';
 
-
               })
-              .then(function(){
-                console.log('After adding info', infoTracks);
-              })
+              
             }
       })
-      
+      .then(function(){
+              console.log('After adding info', infoTracks);
+
+              res.send(infoTracks);
+
+            })
       .catch(function(error){
         console.log(error);
         throw error;
       })
-  })
-  .catch(function(error) {
-    console.log(error);
-    throw error;
   })
     
       

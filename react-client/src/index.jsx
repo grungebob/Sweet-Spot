@@ -9,11 +9,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      items: ['exampleItem1', 'exampleItem2'],
+      items: [],
       term: ''
     }
     this.onChange = this.onChange.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.artistSearch = this.artistSearch.bind(this);
   }
 
   componentDidMount() {
@@ -54,6 +55,7 @@ class App extends React.Component {
       
       var newName = name.replace(' ', '%20');
       console.log('Searching for ' + newName);
+      var newData = []
 
 
       // Get request because not changing their database
@@ -61,6 +63,17 @@ class App extends React.Component {
       $.get('/artist', {
           url: '/artist',
           nameParam: newName
+      })
+      .done((data) => {
+        console.log("incoming data", data);
+        for (var song in data){
+          console.log('Singles', song)
+          newData.push(song);
+        }
+        console.log(newData);
+        // this.setState ({
+        //   this.state.items.concat(newData);
+        // })
       })
     }
 
