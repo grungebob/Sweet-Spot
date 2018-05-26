@@ -30,23 +30,11 @@ class App extends React.Component {
     });
   }
 
-  artistSearch(name) {
-    //let artistName = JSON.stringify(name);
-    console.log('Searching for ' + name);
-    $.post({
-        url: '/search',
-        //Unclear:
-        method: 'GET',
-        accept: 'application/json',
-        contentType: 'application/json',
-        authorization: token,
-    })
-  }
 
   onChange (e) {
     console.log('You changed something you gawd');
-    console.log(e.target.value);
-    console.log(this.state);
+    //console.log(e.target.value);
+    console.log('Current state: ', this.state);
 
     this.setState({
       term: e.target.value
@@ -55,12 +43,26 @@ class App extends React.Component {
 
   handleKeyPress (e) {
     if (e.key === 'Enter') {
-      console.log(e);
-      console.log(this.state.term);
+      // console.log('Event', e);
+      // console.log(this.state.term);
       this.artistSearch(this.state.term);
     }
   }
 
+  artistSearch(name) {
+      //let artistName = JSON.stringify(name);
+      
+      var newName = name.replace(' ', '%20');
+      console.log('Searching for ' + newName);
+
+
+      // Get request because not changing their database
+      // Posting is inserting or updating in servers
+      $.get('/artist', {
+          url: '/artist',
+          nameParam: newName
+      })
+    }
 
 
   render () {
