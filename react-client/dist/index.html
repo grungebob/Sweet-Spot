@@ -1,10 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Item List</title>
+  <title>Sweet Spot</title>
+  <style>
+    body {background-color: black; text-align: center;}
+    body {color: white; font-family: 'proxima-nova', helvetica;}
+    input[type=text] {
+
+    width: 300px;
+    color: white;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 30px;
+    background-color: black;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  input[type=text]:focus {
+    width: 80%;
+  }
+  </style>
+  
 </head>
 <body>
-<div id="app"></div>
-<script type="text/javascript" src="bundle.js"></script>
+  <div id="app"></div>
+  <script type="text/javascript" src="bundle.js"></script>
 </body>
 </html>
+
+
+
+ <!-- 
+
+
+<style>
+    body {background-color: black; text-align: center;}
+    body {color: white; font-family: 'proxima-nova', helvetica;}
+</style>
+  <h2>Finding the right song for your mood</h2>
+  <h3>Open your console log: <code>View > Developer > JavaScript Console</code></h3>
+Spotify player:
+ <script src="https://sdk.scdn.co/spotify-player.js"></script>
+  <script>
+    window.onSpotifyWebPlaybackSDKReady = () => {
+      const token = 'BQBvWIi4X3V7rz6qwvHdDl4xOswrPFEkoOrMs8Mx3cQw8EIxEyojkeLUVd6dCW5KMA58uyb4LKX5zzj8Nr4sKFPshaz-Dxx9-AfLXD8KUbdzKEP1MevvY-fNdOPealSB1K01G1P5Yd6OcfChW6o6_6C453CGjbbwkw';
+      const player = new Spotify.Player({
+        name: 'Web Playback SDK Quick Start Player',
+        getOAuthToken: cb => { cb(token); }
+      });
+
+      // Error handling
+      player.addListener('initialization_error', ({ message }) => { console.error(message); });
+      player.addListener('authentication_error', ({ message }) => { console.error(message); });
+      player.addListener('account_error', ({ message }) => { console.error(message); });
+      player.addListener('playback_error', ({ message }) => { console.error(message); });
+
+      // Playback status updates
+      player.addListener('player_state_changed', state => { console.log(state); });
+
+      // Ready
+      player.addListener('ready', ({ device_id }) => {
+        console.log('Ready with Device ID', device_id);
+      });
+
+      // Not Ready
+      player.addListener('not_ready', ({ device_id }) => {
+        console.log('Device ID has gone offline', device_id);
+      });
+
+      // Connect to the player!
+      player.connect();
+    }; -->

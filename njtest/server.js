@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 
   http.createServer(function(request, response) {
     response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Let's get it");
+    response.write("Hello World");
     response.end();
   }).listen(8888);
 
@@ -24,12 +24,6 @@ var app = express();
 // UNCOMMENT FOR ANGULAR
 // app.use(express.static(__dirname + '/../angular-client'));
 // app.use(express.static(__dirname + '/../node_modules'));
-
-
-app.post('/search', function(req, res){
-  console.log('Client Post res', res);
-  console.log('Client Post req', req);
-})
 
 app.get('/items', function (req, res) {
   items.selectAll(function(err, data) {
