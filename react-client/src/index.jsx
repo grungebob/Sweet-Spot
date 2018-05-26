@@ -55,7 +55,7 @@ class App extends React.Component {
       
       var newName = name.replace(' ', '%20');
       console.log('Searching for ' + newName);
-      var newData = []
+      var newData = {}
 
 
       // Get request because not changing their database
@@ -65,14 +65,10 @@ class App extends React.Component {
           nameParam: newName
       })
       .done((data) => {
-        console.log("incoming data", data);
-        for (var song in data){
-          console.log('Singles', song)
-          newData.push(song);
-        }
-        console.log(newData);
+        
+        console.log(data);
         // this.setState ({
-        //   this.state.items.concat(newData);
+        //   this.state.items.concat(data);
         // })
       })
     }

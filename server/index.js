@@ -45,6 +45,7 @@ app.get('/artist', function(req, res){
 
   var curName = '';
   var curId = '';
+  var allTracks = [];
   var infoTracks = {};
 
   spotify
@@ -64,13 +65,13 @@ app.get('/artist', function(req, res){
         for (track of topTracks.tracks) {
           console.log('track', track);
           console.log('track images', track.album.images[1].url)
-          infoTracks[track.name] = {
+          allTracks.push(infoTracks[track.name] = {
             artist: track.artists[0].name,
             trackId: track.id,
             spotifyLink: track.external_urls.spotify,
             image: track.album.images[0].url
             //NOT always available: preview: preview_url
-          }
+          })
           // if (track.preview_url){
           //   infoTracks[track.name] = {
           //     preview: track.preview_url
@@ -98,15 +99,15 @@ app.get('/artist', function(req, res){
                 infoTracks[track].intensity= Math.round(trackInfo.energy * 100).toString() + '%';
                 infoTracks[track].wordiness= Math.floor(Math.round(trackInfo.speechiness * 200), 100).toString() + '%';
                 infoTracks[track].danciness= Math.round(trackInfo.danceability * 100).toString() + '%';
-
               })
               
             }
       })
       .then(function(){
               console.log('After adding info', infoTracks);
+              console.log('all Tracks', allTracks);
 
-              res.send(infoTracks);
+              res.send(allTracks);
 
             })
       .catch(function(error){
