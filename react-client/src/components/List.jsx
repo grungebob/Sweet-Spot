@@ -2,11 +2,41 @@ import React from 'react';
 import ListItem from './ListItem.jsx';
 
 const List = (props) => (
-  <div>
-    <h4> </h4> 
-    There are { props.items.length } items.
-    { props.items.map(item => <ListItem item={item}/>)}
-  </div>
+  <table>
+  <caption>There are { props.items.length } items.</caption>
+  <tr>
+    <th>Artist</th>
+    <th>Song</th>
+    <th>Tempo</th>
+    <th>Intensity</th>
+    <th>Wordiness</th>
+    <th>Danciness</th>
+  </tr>
+  </table>
 )
 
 export default List;
+
+
+/*
+<div>
+    <h6>There are { props.items.length } items. </h6>
+    { props.items.map(item => <ListItem item={item}/>)}
+  </div>
+
+<table style="width:100%">
+  <caption>Monthly savings</caption>
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$50</td>
+  </tr>
+</table>
+*/
