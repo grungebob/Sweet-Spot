@@ -67,8 +67,15 @@ class App extends React.Component {
       .done((data) => {
         
         console.log(data);
-        // this.setState ({
-        //   this.state.items.concat(data);
+        //console.log(this.state);
+        // return data;
+        // this.setState({
+        //   // this.state.items
+        // })
+      })
+      .then((data) => {
+        // this.setState({
+        //   this.state.items
         // })
       })
     }
