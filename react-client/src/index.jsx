@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './components/List.jsx';
+import BPM from './components/BPM.jsx'
 
 var token = 'Bearer BQALfwUDJ3K23rAXrKomhSU-D4tgdryiARMCdwGqYt53hQh6UFpWwDBtYRBVSJqPyUGWBDeLpVOpQN8Ch8H2D8Ri6fEmpDXaKsGqxD7tIqP0_saf0DXatMYrnJQqf7IutmYV55VL4D9ETo60hQg'
 
@@ -33,9 +34,9 @@ class App extends React.Component {
 
 
   onChange (e) {
-    console.log('You changed something you gawd');
+    //console.log('You changed something you gawd');
     //console.log(e.target.value);
-    console.log('Current state: ', this.state);
+    //console.log('Current state: ', this.state);
 
     this.setState({
       term: e.target.value
@@ -95,17 +96,19 @@ class App extends React.Component {
 */
 
   render () {
+    // {this.artistSearch('Childish Gambino')}
     return (
       <div>
-
-      <h1>Sweet Spot</h1>
-       <div class>
-        <input type="text" placeholder="Enter Artist Name" value={this.state.term} onChange={this.onChange} onKeyPress={this.handleKeyPress}/>
-       </div>
-       <h3> A song for every mood. </h3>
-      <List items={this.state.items}/>
-    </div>
-    )
+        <h1>Sweet Spot</h1>
+        <h4> A song for every mood. </h4>
+         <div class>
+          <input type="text" placeholder="Enter Artist Name" value={this.state.term} onChange={this.onChange} onKeyPress={this.handleKeyPress}/>
+         </div>
+        <List items={this.state.items}/>
+        <BPM />
+      </div>
+      )
+    
   }
 }
 

@@ -70,7 +70,7 @@ app.get('/artist', function(req, res){
             artist: track.artists[0].name,
             trackId: track.id,
             spotifyLink: track.external_urls.spotify,
-            image: track.album.images[0].url
+            image: track.album.images[2].url
             //NOT always available: preview: preview_url
           })
           // if (track.preview_url){

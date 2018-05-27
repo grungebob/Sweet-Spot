@@ -5,6 +5,7 @@ const List = (props) => (
   <table id="table1">
     
     <tr>
+      <th></th>
       <th>Artist</th>
       <th>Song</th>
       <th>Tempo</th>

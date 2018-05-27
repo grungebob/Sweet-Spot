@@ -2,6 +2,7 @@ import React from 'react';
 
 const ListItem = (props) => (
   <tr>
+    <th><img src = {props.item.image} /></th>
     <th>{props.item.artist}</th>
     <th><a href={props.item.spotifyLink}>{props.item.title}</a></th>
     <th>{props.item.tempo}</th>
