@@ -2,16 +2,19 @@ import React from 'react';
 import ListItem from './ListItem.jsx';
 
 const List = (props) => (
-  <table>
-  <caption>There are { props.items.length } items.</caption>
-  <tr>
-    <th>Artist</th>
-    <th>Song</th>
-    <th>Tempo</th>
-    <th>Intensity</th>
-    <th>Wordiness</th>
-    <th>Danciness</th>
-  </tr>
+  <table id="table1">
+    
+    <tr>
+      <th>Artist</th>
+      <th>Song</th>
+      <th>Tempo</th>
+      <th>Intensity</th>
+      <th>Wordiness</th>
+      <th>Danciness</th>
+    </tr>
+    
+    { props.items.map(item => <ListItem item={item}/>)}
+    
   </table>
 )
 
@@ -19,6 +22,8 @@ export default List;
 
 
 /*
+<caption>There are { props.items.length } items.</caption>
+
 <div>
     <h6>There are { props.items.length } items. </h6>
     { props.items.map(item => <ListItem item={item}/>)}

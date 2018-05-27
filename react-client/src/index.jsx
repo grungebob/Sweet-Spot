@@ -89,11 +89,15 @@ class App extends React.Component {
       //})
     }
 
+/* Deleted HTML elements:
+      <button onClick = {() => {console.log(this.state)}} >State</button>
+      <img src="images.png">
+*/
 
   render () {
     return (
       <div>
-      <button onClick = {() => {console.log(this.state)}} >State</button>
+
       <h1>Sweet Spot</h1>
        <div class>
         <input type="text" placeholder="Enter Artist Name" value={this.state.term} onChange={this.onChange} onKeyPress={this.handleKeyPress}/>
