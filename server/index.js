@@ -98,14 +98,14 @@ app.get('/artist', function(req, res){
                 //console.log('current track:', track, 'dance rating', trackInfo.danceability); 
                 infoTracks[track].tempo= Math.round(trackInfo.tempo).toString() + 'BPM';
                 infoTracks[track].intensity= Math.round(trackInfo.energy * 100).toString() + '%';
-                infoTracks[track].wordiness= Math.floor(Math.round(trackInfo.speechiness * 200), 100).toString() + '%';
+                infoTracks[track].wordiness= Math.min(Math.round(trackInfo.speechiness * 200), 100).toString() + '%';
                 infoTracks[track].danciness= Math.round(trackInfo.danceability * 100).toString() + '%';
               })
               
             }
       })
       .then(function(){
-              console.log('After adding info', infoTracks);
+              // console.log('After adding info', infoTracks);
               console.log('all Tracks', allTracks);
 
               res.send(allTracks);

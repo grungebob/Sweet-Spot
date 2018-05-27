@@ -64,20 +64,29 @@ class App extends React.Component {
           url: '/artist',
           nameParam: newName
       })
-      .done((data) => {
-        
-        console.log(data);
+      .done( (data) => {
+        console.log('Returned data', data);
+        console.log('Data constructor', data.constructor)
+        this.setState({
+          items: data
+        })
+      })
+      // .done((data) => {
+      //   console.log('Returned data', data);
+      //   this.setState(
+      //     items: data
+      //   )
         //console.log(this.state);
         // return data;
         // this.setState({
         //   // this.state.items
         // })
-      })
-      .then((data) => {
+      // })
+      // .then((data) => {
         // this.setState({
         //   this.state.items
         // })
-      })
+      //})
     }
 
 
@@ -86,9 +95,10 @@ class App extends React.Component {
       <div>
       <button onClick = {() => {console.log(this.state)}} >State</button>
       <h1>Sweet Spot</h1>
-       <div class="topnav">
+       <div class>
         <input type="text" placeholder="Enter Artist Name" value={this.state.term} onChange={this.onChange} onKeyPress={this.handleKeyPress}/>
        </div>
+       <h3> A song for every mood. </h3>
       <List items={this.state.items}/>
     </div>
     )
