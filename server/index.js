@@ -63,9 +63,10 @@ app.get('/artist', function(req, res){
         //console.log('TopTracks', topTracks);
         //console.log('First track Urls', topTracks.tracks[0].external_urls.spotify)
         for (track of topTracks.tracks) {
-          console.log('track', track);
-          console.log('track images', track.album.images[1].url)
+          // console.log('track', track);
+          // console.log('track images', track.album.images[1].url)
           allTracks.push(infoTracks[track.name] = {
+            title: track.name,
             artist: track.artists[0].name,
             trackId: track.id,
             spotifyLink: track.external_urls.spotify,
