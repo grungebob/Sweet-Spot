@@ -19,17 +19,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    $.ajax({
-      url: '/items', 
-      success: (data) => {
-        // this.setState({
-        //   items: data
-        // })
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
+    this.artistSearch('Childish Gambino');
   }
 
 
@@ -96,7 +86,7 @@ class App extends React.Component {
 */
 
   render () {
-    // {this.artistSearch('Childish Gambino')}
+    
     return (
       <div>
         <h1>Sweet Spot</h1>
