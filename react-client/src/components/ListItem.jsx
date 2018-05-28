@@ -9,7 +9,7 @@ const ListItem = (props) => (
     <td>{props.item.intensity}</td>
     <td>{props.item.wordiness}</td>
     <td>{props.item.danciness}</td>
-    <td><img src="Apple-Music-Black.jpg" /></td>
+    <td><img src="Apple.jpg" /></td>
   </tr>
 )
 
