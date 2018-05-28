@@ -12,6 +12,7 @@ const List = (props) => (
       <th>Intensity</th>
       <th>Wordiness</th>
       <th>Danciness</th>
+      <th>Key</th>
       <th>Streams</th>
     </tr>
     

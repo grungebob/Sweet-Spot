@@ -20,6 +20,7 @@ var artistSchema = mongoose.Schema({
   danciness: String,
   imageLink: String,
   intensity: String,
+  key: String,
   spotifyLink: String,
   tempo: String,
   title: String,
@@ -41,7 +42,8 @@ var saveIt = (tracks) => {
         tempo: tracks[i].tempo,
         title: tracks[i].title,
         trackId: tracks[i].trackId,
-        wordiness: tracks[i].wordiness
+        wordiness: tracks[i].wordiness,
+        key: tracks[i].key
       })
       newTrack.save(function(error) {
         console.log('Track info should be saved');

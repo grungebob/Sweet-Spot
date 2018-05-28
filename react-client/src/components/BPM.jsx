@@ -53,6 +53,7 @@ class BPM extends React.Component {
         <h4>Tap the logo to the beat of your pulse</h4>
         <div id="logo">
         <img class="logo" src="url.png" onClick={this.calcBpm} />
+        <h6>by Robert Chung chungrob@gmail.com</h6>
         </div>
       </div>
       )
