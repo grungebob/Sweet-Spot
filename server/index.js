@@ -104,27 +104,27 @@ app.get('/artist', function(req, res){
                 
                 if (trackInfo.key === 0){
                   infoTracks[track].key = "C";
-                } else if (trackInfo.key === "1"){
+                } else if (trackInfo.key === 1){
                   infoTracks[track].key = "C♯, D♭";
-                } else if (trackInfo.key === "2"){
+                } else if (trackInfo.key === 2){
                   infoTracks[track].key = "D";
-                } else if (trackInfo.key === "3"){
+                } else if (trackInfo.key === 3){
                   infoTracks[track].key = "D♯, E♭";
-                } else if (trackInfo.key === "4"){
+                } else if (trackInfo.key === 4){
                   infoTracks[track].key = "E";
-                } else if (trackInfo.key === "5"){
+                } else if (trackInfo.key === 5){
                   infoTracks[track].key = "F";
-                } else if (trackInfo.key === "6"){
+                } else if (trackInfo.key === 6){
                   infoTracks[track].key = "F♯, G♭";
-                } else if (trackInfo.key === "7"){
+                } else if (trackInfo.key === 7){
                   infoTracks[track].key = "G";
-                } else if (trackInfo.key === "8"){
+                } else if (trackInfo.key === 8){
                   infoTracks[track].key = "G♯, A♭";
-                } else if (trackInfo.key === "9"){
+                } else if (trackInfo.key === 9){
                   infoTracks[track].key = "A";
-                } else if (trackInfo.key === "10"){
+                } else if (trackInfo.key === 10){
                   infoTracks[track].key = "A♯, B♭";
-                } else if (trackInfo.key === "11"){
+                } else if (trackInfo.key === 11){
                   infoTracks[track].key = "A♯, B♭";
                 } else {
                   infoTracks[track].key = trackInfo.key;
