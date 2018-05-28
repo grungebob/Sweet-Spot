@@ -101,6 +101,7 @@ app.get('/artist', function(req, res){
                 infoTracks[track].intensity= Math.round(trackInfo.energy * 100).toString() + '%';
                 infoTracks[track].wordiness= Math.min(Math.round(trackInfo.speechiness * 200), 100).toString() + '%';
                 infoTracks[track].danciness= Math.round(trackInfo.danceability * 100).toString() + '%';
+                infoTracks[track].key = trackInfo.key;
               })
             }            
       })
