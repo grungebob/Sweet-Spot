@@ -25,8 +25,27 @@ var artistSchema = mongoose.Schema({
 
 var Artist = mongoose.model('Artist', artistSchema);
 
-var saveIt = (instance) => {
-    console.log('This is the instance', instance);
+var saveIt = (tracks) => {
+    //console.log('This is the instance', instance);
+    for (var i = 0; i < tracks.length; i++) {
+      var newTrack = new Artist ({
+        artist: tracks[i].artist,
+        danciness: tracks[i].danciness,
+        imageLink: tracks[i].image,
+        intensity: tracks[i].intensity,
+        spotifyLink: tracks[i].spotifyLink,
+        tempo: tracks[i].tempo,
+        title: tracks[i].title,
+        trackId: tracks[i].trackId,
+        wordiness: tracks[i].wordiness
+      })
+      newTrack.save(function(error) {
+        console.log('Track info should be saved');
+        if (error) {
+          console.log('Repo save error', error);
+        }
+      }); 
+    }
   }
 
 var selectAll = function(callback) {
