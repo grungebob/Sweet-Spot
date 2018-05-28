@@ -93,8 +93,8 @@ class App extends React.Component {
           <p>Log in with Facebook</p>
         </div>
         <div>
-          <h1 align-content="center">Sweet Spot</h1>
         </div>
+        <h1 align-content="center">Sweet Spot</h1>
         <h4> Music for every mood. </h4>
          <div class>
           <input type="text" placeholder="Enter Artist Name" value={this.state.term} onChange={this.onChange} onKeyPress={this.handleKeyPress}/>
