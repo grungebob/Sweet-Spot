@@ -93,7 +93,7 @@ class App extends React.Component {
           <p>Log in with Facebook</p>
         </div>
         <div>
-        <h1>
+        <h1> .
         </h1>
         <h2 align-content="center">    Sweet Spot</h2>
         <h4> Music for every mood. </h4>
