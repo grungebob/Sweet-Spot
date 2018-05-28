@@ -89,6 +89,9 @@ class App extends React.Component {
     
     return (
       <div>
+        <div>
+          <img src="face.png" alt="facebook" align="right"/>
+        </div>
         <h1>Sweet Spot</h1>
         <h4> Music for every mood. </h4>
          <div class>
