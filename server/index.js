@@ -2,7 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
- var items = require('../database-mongo');
+ var items = require('../database-mongo/');
+ var db = require('../database-mongo/index.js');
 
  var Spotify = require('node-spotify-api');
 
@@ -101,13 +102,13 @@ app.get('/artist', function(req, res){
                 infoTracks[track].wordiness= Math.min(Math.round(trackInfo.speechiness * 200), 100).toString() + '%';
                 infoTracks[track].danciness= Math.round(trackInfo.danceability * 100).toString() + '%';
               })
-              
-            }
+            }            
       })
-      .then(function(){
+      .then(function(data){
               // console.log('After adding info', infoTracks);
-              console.log('all Tracks', allTracks);
-
+              //console.log('all Tracks', allTracks);
+              //console.log('Data', data);
+              db.saveIt(allTracks);
               res.send(allTracks);
 
             })
@@ -122,7 +123,7 @@ app.get('/artist', function(req, res){
     //     console.log(data);
     //   })
 })
-
+/*
 var addMusicInfo = async function addMusicInfo(tracks) {
    console.log('congrats bill, youre a law')
   for (track in tracks) {
@@ -143,7 +144,7 @@ var addMusicInfo = async function addMusicInfo(tracks) {
       })
     }
   }
-
+*/
 
 app.get('/items', function (req, res) {
   items.selectAll(function(err, data) {
