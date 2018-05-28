@@ -1,5 +1,9 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
+var promise = mongoose.connect('mongodb://localhost/myapp', {
+  useMongoClient: true,
+  /* other options */
+});
 
 var db = mongoose.connection;
 
