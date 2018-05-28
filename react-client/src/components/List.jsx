@@ -7,7 +7,7 @@ const List = (props) => (
     <tr>
       <th></th>
       <th>Artist</th>
-      <th>Song (Spotify)</th>
+      <th>Song</th>
       <th>Tempo</th>
       <th>Intensity</th>
       <th>Wordiness</th>
