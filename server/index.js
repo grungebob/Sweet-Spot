@@ -102,7 +102,7 @@ app.get('/artist', function(req, res){
                 infoTracks[track].wordiness= Math.min(Math.round(trackInfo.speechiness * 200), 100).toString() + '%';
                 infoTracks[track].danciness= Math.round(trackInfo.danceability * 100).toString() + '%';
                 
-                if (trackInfo.key === "0"){
+                if (trackInfo.key === 0){
                   infoTracks[track].key = "C";
                 } else if (trackInfo.key === "1"){
                   infoTracks[track].key = "C♯, D♭";
