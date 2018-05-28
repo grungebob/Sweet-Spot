@@ -2,13 +2,13 @@ import React from 'react';
 
 const ListItem = (props) => (
   <tr>
-    <th><img src = {props.item.image} /></th>
-    <th>{props.item.artist}</th>
-    <th><a href={props.item.spotifyLink}>{props.item.title}</a></th>
-    <th>{props.item.tempo}</th>
-    <th>{props.item.intensity}</th>
-    <th>{props.item.wordiness}</th>
-    <th>{props.item.danciness}</th>
+    <td><img src = {props.item.image} /></td>
+    <td>{props.item.artist}</td>
+    <td><a href={props.item.spotifyLink}>{props.item.title}</a></td>
+    <td>{props.item.tempo}</td>
+    <td>{props.item.intensity}</td>
+    <td>{props.item.wordiness}</td>
+    <td>{props.item.danciness}</td>
   </tr>
 )
 
