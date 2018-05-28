@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
-var promise = mongoose.connect('mongodb://localhost/myapp', {
-  useMongoClient: true,
-  /* other options */
-});
+mongoose.connect('mongodb://ds235860.mlab.com:35860/heroku_k840xrm0');
+// var promise = mongoose.connect('mongodb://localhost/myapp', {
+//   useMongoClient: true,
+//   /* other options */
+// });
 
 var db = mongoose.connection;
 
