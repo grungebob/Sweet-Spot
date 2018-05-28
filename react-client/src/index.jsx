@@ -90,7 +90,7 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          <img src="face.png" alt="facebook" align="right"/>
+          <a ng-href="https://www.facebook.com/v2.3/dialog/oauth?client_id=174829003346&amp;state=AQBk2gTpW97eSicf5juVO7EMH9R1e-nSssXUzav2hkw16vnBITPhrQAlpk7Mu_tDjgBCuxNqI0X3gjwR_di0uztuZmpuIPSmVMWsGgH_49bURZB8WBIMx7WkoVH-QVyBjg-C&amp;redirect_uri=https%3A%2F%2Faccounts.spotify.com%2Fapi%2Ffacebook%2Foauth%2Faccess_token" class="btn btn-sm btn-block btn-facebook ng-binding" target="_parent" role="button" href="https://www.facebook.com/v2.3/dialog/oauth?client_id=174829003346&amp;state=AQBk2gTpW97eSicf5juVO7EMH9R1e-nSssXUzav2hkw16vnBITPhrQAlpk7Mu_tDjgBCuxNqI0X3gjwR_di0uztuZmpuIPSmVMWsGgH_49bURZB8WBIMx7WkoVH-QVyBjg-C&amp;redirect_uri=https%3A%2F%2Faccounts.spotify.com%2Fapi%2Ffacebook%2Foauth%2Faccess_token">Log in with Facebook</a>
         </div>
         <h1>Sweet Spot</h1>
         <h4> Music for every mood. </h4>
