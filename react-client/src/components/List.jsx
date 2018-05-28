@@ -7,11 +7,12 @@ const List = (props) => (
     <tr>
       <th></th>
       <th>Artist</th>
-      <th>Song</th>
+      <th>Song (Spotify)</th>
       <th>Tempo</th>
       <th>Intensity</th>
       <th>Wordiness</th>
       <th>Danciness</th>
+      <th>Streams</th>
     </tr>
     
     { props.items.map(item => <ListItem item={item}/>)}
